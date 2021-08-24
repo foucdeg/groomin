@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "bungcip.better-toml",
+    "ms-python.python",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "jpoissonnier.vscode-styled-components",
+    "EditorConfig.EditorConfig",
+    "stylelint.vscode-stylelint"
+  ]
+}

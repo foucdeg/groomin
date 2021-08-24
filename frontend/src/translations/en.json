@@ -1,0 +1,251 @@
+{
+  "home": {
+    "title": "Draw Around",
+    "tagline": "Can't draw? Awesome.",
+    "welcome": "Welcome",
+    "howToPlay": "How to play",
+    "startRoom": "Create a game",
+    "donateTitle": "Donate",
+    "donateDescription": "to help us cover server costs",
+    "rules": {
+      "0": "Make sure you have a <strong>stable Internet connection</strong> and <strong>enough battery left</strong> on your device.",
+      "1": "You should be at least 4 people to play. One of you is named <strong>Game Master</strong> and creates the game. The Game Master sends the link to the game to the other players.",
+      "2": "Pick a word or sentence that the next person will have to sketch.",
+      "3": "<strong>Draw the word or sentence</strong>, or <strong>try to guess</strong> what the previous person drew. Then, your drawing or idea is passed on to the next player, and so on.",
+      "4": "When everybody has drawn all of the words, we look at the drawing pads! <strong>Look at what the initial words or sentences became</strong> and vote for your favorite sketches and ideas."
+    },
+    "twitchModal": {
+      "title": "Live streams",
+      "noStreams": "There are no streams live"
+    },
+    "termsAndConditions": "Terms and Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "leaderboard": "World leaderboard",
+    "openRules": "Game rules",
+    "joinDiscord": "Our Discord",
+    "twitchStreams": "{currentStreamsCount} live streams",
+    "rulesUnderstood": "Got it!",
+    "featuredDrawingAuthor": "by {name}"
+  },
+  "roomLobby": {
+    "title": "Lobby",
+    "sendLink": "Send this link to other players <info>({min} to {max} players)</info>",
+    "copiedLink": "Copied link!",
+    "inGame": "A game is underway. We'll let you in as soon as it finishes!",
+    "needMore": "We still need {count} {count, plural, one {player} many {players}}",
+    "isEveryoneThere": "Is everyone there?",
+    "play": "Play",
+    "adminWillStart": "{name} will start the game when ready!",
+    "timeDuration": "<strong>Time duration:</strong> {options} seconds"
+  },
+  "menu": {
+    "accountMenu": "Account",
+    "playerMenu": "Player",
+    "adminMenu": "Admin window",
+    "addPlayer": "Invite player",
+    "addPlayerLinkCopied": "Link copied!",
+    "refresh": "Resynchronize",
+    "ranking": "Ranking",
+    "leaveTeam": "Leave team",
+    "confirmLeave": "Leaving mid-game forces everyone to restart the game. Are you sure?"
+  },
+  "drawOwnWordSwitch": {
+    "label": "Number of rounds:",
+    "upperRoundCount": "{roundCount}, but we begin by drawing our own word"
+  },
+  "controlledRevealSwitch": {
+    "label": "Synced revelation:"
+  },
+  "padInit": {
+    "chooseSentence": "Pick a word or sentence:",
+    "placeholder": "A giraffe?",
+    "youDraw": "Choose wisely, <strong>you</strong>'ll have to draw this!",
+    "getSuggestions": "Lacking imagination? Roll the dice!",
+    "submit": "Submit",
+    "update": "Edit"
+  },
+  "wordToDrawing": {
+    "sentenceToDraw": "Sentence to draw:",
+    "duration": "You have {duration} seconds!",
+    "noSentence": "Something went wrong, we didn't get that sentence 😞",
+    "timesUp": "Time's up, drop that pencil!"
+  },
+  "drawingToWord": {
+    "drawingToGuess": "Guess this sketch:",
+    "placeholder": "A sheep?",
+    "noSentence": "Something went wrong, we didn't get that drawing 😞",
+    "submit": "Submit",
+    "update": "Edit"
+  },
+  "recap": {
+    "waitingFor": "Aren't done voting yet:",
+    "forceNextStep": "Go to results",
+    "confirmForceNextStep": "Are you sure you want to skip to next step? We didn't get everybody's votes.",
+    "availableVotes": "Remaining votes:",
+    "noMoreVotes": "No remaining votes",
+    "voteResults": "🏆 Vote results",
+    "startVotingPhase": "Start Voting",
+    "lockedReveal": "Drawing pad reveal (controlled by the admin): {current} / {total}"
+  },
+  "voteResults": {
+    "newGame": "New game?",
+    "bestMoments": "Best moments",
+    "voteCount": "{voteCount} point{ voteCount, plural, one {} other {s}}",
+    "scoreboard": "Scoreboard",
+    "reviewGame": "Review game",
+    "donate": "If you enjoyed the game, you can <a>donate</a> to help us with server costs."
+  },
+  "newGameModal": {
+    "title": "Start a new game",
+    "randomOrder": "Random order",
+    "sameOrder": "Same order",
+    "reverseOrder": "Reverse order"
+  },
+  "adminModal": {
+    "removePlayer": "Remove a player",
+    "removePlayerInstruction": "Click the cross next to the player you want to remove.",
+    "inCurrentGame": "In the current game",
+    "inLobby": "In the lobby",
+    "nobodyWaiting": "Nobody!",
+    "restartGame": "Start a new game",
+    "restartGameInstructions": "The next game will include {names}.",
+    "samePlayers": "With the same players.",
+    "randomOrder": "Random order",
+    "sameOrder": "Same order",
+    "reverseOrder": "Reverse order"
+  },
+  "userNameModal": {
+    "title": "Hey there! What's your name?",
+    "pickName": "Pick a nickname",
+    "placeholder": "M4sterSk3tcher_69",
+    "iHaveAnAccount": "I have an account or I wish to create one →"
+  },
+  "auth": {
+    "facebookLogin": "Sign in with Facebook",
+    "googleLogin": "Sign in with Google",
+    "oldStyle": "Or the classic way:",
+    "email": "Email address",
+    "password": "Password",
+    "pickPassword": "Choose a password",
+    "emailExample": "myemail@aol.com",
+    "createAccount": "Create an account",
+    "logIn": "Log in",
+    "forgotPassword": "I forgot my password 😢",
+    "errors": {
+      "required": "This field is required.",
+      "invalidEmail": "This email address is not valid.",
+      "emailInUse": "This email address is already in use.",
+      "incorrectEmailPassword": "Incorrect username or password combination."
+    }
+  },
+  "lostPlayerModal": {
+    "title": "We lost someone!",
+    "whoLeft": "{name} seems to have left mid-game 😢 We'll have to start over.",
+    "newAdminMe": "👑 You're the Game Master now!",
+    "newAdminGoToSettings": "The admin menu (cog ☸️ top right) lets you start a new game.",
+    "newAdminNotMe": "{name} is the Game Master now!",
+    "newAdminRestarts": "{name} can start a new game.",
+    "goToSettings": "Open the admin settings (top right).",
+    "adminRestarts": "{name} can start a new game."
+  },
+  "createAccountModal": {
+    "niceGame": "Good game, {name}!",
+    "keepHistory": "Let your art not be forgotten! To keep access to your masterpieces, we suggest you create an account.",
+    "features": "An account will bring you nice and shiny new features:",
+    "history": "History of all your games",
+    "leaderboard": "A world leaderboard comparing the best Draw Around players",
+    "safeNickname": "Your nickname is reserved to you",
+    "andMore": "...and more to come!",
+    "later": "Later"
+  },
+  "mobileGate": {
+    "bigFingers": "Big fingers, small screen",
+    "laptopOrTablet": "Draw Around is more practical on a computer or tablet.",
+    "sendEmail": "Send link by email",
+    "emailExample": "myemail@aol.com",
+    "emailSent": "An email was sent to you!",
+    "emailSubject": "My link to Draw Around",
+    "emailBody": "Link: {link}\n\nSee you soon!"
+  },
+  "playerModal": {
+    "title": "My account",
+    "myInfos": "My infos",
+    "playerName": "Player Name",
+    "playerColor": "Player color",
+    "colors": {
+      "purple": "Purple",
+      "lightBlue": "Light blue",
+      "lightGreen": "Light green",
+      "mauve": "Mauve",
+      "orange": "Orange",
+      "bloodOrange": "Blood Orange",
+      "yellow": "Yellow",
+      "fuschia": "Fuschia"
+    },
+    "myStats": "My stats",
+    "totalScore": "Total score",
+    "ranking": "World ranking",
+    "changePassword": "Change password",
+    "logOut": "Log out",
+    "history": "Game history",
+    "leaderboard": "Leaderboard"
+  },
+  "rankingModal": {
+    "title": "Scores",
+    "noRanking": "No ranking yet"
+  },
+  "remainingPlayers": {
+    "waitingFor": "Waiting for these guys to finish:",
+    "forceNextStep": "Force game to next step",
+    "confirmForceNextStep": "Are you sure you want to skip to next step? We didn't get everybody's drawing or sentence."
+  },
+  "color": {
+    "pink": "pink",
+    "purple": "purple",
+    "blue": "blue",
+    "skyblue": "skyblue",
+    "green": "green",
+    "lime": "lime",
+    "beige": "beige",
+    "yellow": "yellow",
+    "orange": "orange",
+    "red": "red",
+    "brown": "brown",
+    "black": "black",
+    "grey": "grey",
+    "white": "white"
+  },
+  "action": {
+    "undo": "Undo {command}",
+    "redo": "Redo {command}",
+    "clear": "Delete ⌫"
+  },
+  "legal": {
+    "termsAndConditionsTitle": "Terms and Conditions",
+    "privacyPolicyTitle": "Privacy Policy",
+    "backToHome": "Back to home"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "filterInput": "Search a player"
+  },
+  "playerDetails": {
+    "seeGame": "Review game"
+  },
+  "common": {
+    "and": "and",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "passwordReset": {
+    "title": "Password reset",
+    "email": "Account email address",
+    "label": "New password",
+    "submit": "Reset password",
+    "submitRequest": "Reset password",
+    "invalidToken": "This link is no longer valid.",
+    "requestNewToken": "Need a new one?",
+    "success": "Your password has been reset successfully. We're taking you back to the homepage, where you'll be able to log in again.",
+    "requestSuccess": "If this account exists, you will receive an email with a password reset link."
+  }
+}

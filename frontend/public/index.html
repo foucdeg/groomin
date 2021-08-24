@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <meta property="og:title" content="Passe un Dessin" />
+    <meta
+      property="og:description"
+      content="Un jeu en ligne collaboratif où le but c'est de dessiner, assez bien, mais pas trop quand même."
+    />
+    <meta name="description" content="Un jeu en ligne collaboratif où le but c'est de dessiner, assez bien, mais pas trop quand même." />
+    <meta property="og:image" content="/social.png" />
+    <meta property="og:url" content="https://passeundessin.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script>
+      const googleAppId = '805693370790-tf9clcvuu8tg5dibon9av5q3lu2o46qk.apps.googleusercontent.com';
+
+      gapi.load('auth2', () => {
+        window.authInstance = gapi.auth2.init({
+          client_id: googleAppId,
+          cookiepolicy: 'single_host_origin',
+        });
+      });
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&family=Roboto+Condensed:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/reset.css" />
+    <title>Passe un Dessin</title>
+  </head>
+
+  <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v7.0&appId=2622893511372846&autoLogAppEvents=1" nonce="jpK3DX9m"></script>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root">
+      <main style="position: absolute; left: 2000px;">
+        <h1>Passe un Dessin</h1>
+        <h2>Tu ne sais pas dessiner ? On va rire.</h2>
+        <p>Un jeu en ligne où le but c'est de dessiner, assez bien, mais pas trop quand même.</p>
+        <p>Comment jouer ?
+          <ul>
+            <li>Assure-toi d'avoir une connexion Internet stable et suffisament de batterie sur ton appareil.</li>
+            <li>Pour jouer, vous devez être à partir de 4 joueurs.</li>
+            <li>Choisis un mot que la personne après toi devra dessiner. La partie commence quand tout le monde a choisi un mot.</li>
+            <li>Dessine le mot proposé ou devine ce que la personne a dessiné.</li>
+            <li>Quand tout le monde a pu dessiner chacun des mots, on passe aux carnets de résultats ! Regarde ce que sont devenus les mots choisis initialement par tes amis avec les talents de certains pour le dessin.</li>
+          </ul>
+        </p>
+      </main>
+    </div>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109852306-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109852306-3', { anonymize_ip: true });
+    </script>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: '2622893511372846',
+          cookie: true,
+          xfbml: true,
+          version: 'v7.0'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/javascript">
+      window.config = {
+        sentry: {
+          dsn: "<%= process.env.REACT_APP_SENTRY_DSN %>",
+          environment: "<%= process.env.REACT_APP_ENV %>",
+        }
+      };
+    </script>
+  </body>
+</html>
