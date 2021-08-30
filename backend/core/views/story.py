@@ -1,69 +1,55 @@
 import json
 import logging
 
-from django.http import (
-    HttpResponse,
-    HttpResponseBadRequest,
-    HttpResponseForbidden,
-    JsonResponse,
-)
+from django.core.exceptions import ValidationError
+from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from django.views.decorators.http import require_GET, require_http_methods
 from rest_framework.generics import RetrieveAPIView
 
 from core.decorators import requires_player
-from core.models import Game
-from core.serializers import GameSerializer
-from core.service.game_service import (
-    GameStateException,
-    VoteException,
-    assert_phase,
-    assert_round,
-    devote,
-    get_round_count,
-    start_debrief,
-    start_next_round,
-    start_reveal,
-    switch_to_vote_results,
-    vote,
-)
+from core.models import Story
+from core.serializers import StorySerializer
+from core.service.game_service import VoteException, devote, vote
 
 logger = logging.getLogger(__name__)
 
 
-class GameRetrieveAPIView(RetrieveAPIView):
+class StoryRetrieveAPIView(RetrieveAPIView):
     lookup_field = "uuid"
-    queryset = Game.objects.prefetch_related(
+    queryset = Story.objects.prefetch_related(
         "votes", "votes__player", "players"
     ).all()
-    serializer_class = GameSerializer
+    serializer_class = StorySerializer
 
 
 @require_http_methods(["POST", "DELETE"])
 @requires_player
-def submit_vote(request, player, pad_step_id):
+def submit_vote(request, player, story_id):
     try:
+        json_body = json.loads(request.body)
+        score = json_body.get("score")
+
         try:
-            pad_step = PadStep.objects.get(uuid=pad_step_id)
-        except PadStep.DoesNotExist:
-            raise VoteException("Pad step with uuid %s does not exist" % pad_step_id)
+            validate_score(score)
+        except ValidationError:
+            raise VoteException("Invalid vote: %s" % score)
+        try:
+            story = Story.objects.get(uuid=story_id)
+        except Story.DoesNotExist:
+            raise VoteException("Pad step with uuid %s does not exist" % story_id)
 
-        game = pad_step.pad.game
+        if player not in story.players:
+            raise VoteException("You cannot vote for this story")
 
-        assert_phase(game, GamePhase.DEBRIEF)
-
-        if not game.has_player(player):
-            raise VoteException("You cannot vote for this game")
-
-        if pad_step.player == player:
-            raise VoteException("You cannot vote for your own round")
+        score = request.POST.get("score")
 
         if request.method == "POST":
-            vote(player, pad_step)
+            vote(player, story, score)
 
             return HttpResponse(status=201)
 
         if request.method == "DELETE":
-            devote(player, pad_step)
+            devote(player, story, None)
 
             return HttpResponse(status=204)
 
@@ -73,10 +59,10 @@ def submit_vote(request, player, pad_step_id):
 
 @require_GET
 @requires_player
-def player_should_join(request, player, game_id):
+def player_should_join(request, player, story_id):
     try:
-        game = Game.objects.get(uuid=game_id)
-    except Game.DoesNotExist:
-        return HttpResponseBadRequest("Game with uuid %s does not exist" % game_id)
+        story = Story.objects.get(uuid=story_id)
+    except Story.DoesNotExist:
+        return HttpResponseBadRequest("Story with uuid %s does not exist" % story_id)
 
-    return JsonResponse({"is_in_game": game.has_player(player), "phase": game.phase})
+    return JsonResponse({"is_in_story": player in story.players})
